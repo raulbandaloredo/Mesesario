@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Feliz Mesesario 💗🍈</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg1:#ffe6f1;--bg2:#fff0f6;--accent:#ff4d88;--accent2:#ff7aa8;--ink:#3a2a2f;--card:#ffffff;
+      --gold:#ffb703;--leaf:#3cb371;--rose:#ff4d6d;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:"Poppins", sans-serif;
+      color:var(--ink);
+      background: radial-gradient(circle at 20% 10%, #fff6fb 0%, var(--bg1) 40%, var(--bg2) 100%);
+      overflow-x:hidden;
+    }
+    .hearts{position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0}
+    .hearts span{
+      position:absolute; bottom:-10vh; width:16px; height:16px; 
+      background:var(--accent); transform:rotate(45deg); opacity:.8; border-radius:2px;
+      animation: floatUp linear var(--dur) var(--delay) infinite;
+      box-shadow:0 0 8px #ff9fc0aa;
+    }
+    .hearts span::before,.hearts span::after{
+      content:""; position:absolute; width:16px; height:16px; background:inherit; border-radius:50%;
+    }
+    .hearts span::before{left:-8px}
+    .hearts span::after{top:-8px}
+    @keyframes floatUp{to{transform:translateY(-120vh) rotate(45deg)}}
+
+    .wrap{position:relative; z-index:1; display:grid; place-items:center; min-height:100%; padding:32px}
+    .card{
+      width:min(920px, 94vw);
+      background:var(--card);
+      border-radius:28px;
+      box-shadow: 0 10px 30px #ff8fb780, inset 0 0 0 1px #ffffff;
+      overflow:hidden;
+    }
+    .header{ position:relative; padding:48px 28px 24px; text-align:center; background:linear-gradient(180deg, #fff 0%, #fff6fb 100%);}
+    .title{font-family:"Great Vibes", cursive; font-size: clamp(44px, 8vw, 72px); color:var(--accent); margin:0;}
+    .subtitle{margin:8px 0 0; font-weight:600; letter-spacing:.3px}
+    .divider{display:block; width:100%; height:70px; background:linear-gradient(180deg,#fff6fb 0%,transparent 100%)}
+    .divider svg{width:100%; height:70px; display:block}
+    .content{padding:28px; display:grid; gap:20px}
+    .quote{
+      font-size:clamp(16px, 2.6vw, 18px);
+      background: #fff9fc;
+      border:1px dashed #ffc1d6;
+      padding:16px 18px; border-radius:16px; text-align:center;
+    }
+    .love{
+      margin-top:6px;
+      padding:22px; border-radius:20px; background:linear-gradient(135deg,#fff0f6 0%, #ffe6f1 100%);
+      border:1px solid #ffd4e7; box-shadow: inset 0 0 24px #ffffff;
+    }
+    .love h3{margin:0 0 8px; font-size:24px; color:#c2185b}
+    .love p{margin:0; line-height:1.7}
+    .btn{
+      appearance:none; border:0; cursor:pointer; font-weight:700;
+      padding:14px 18px; border-radius:999px; letter-spacing:.3px;
+      background:linear-gradient(180deg, #ff6fa6, #ff427f);
+      color:white; box-shadow:0 8px 20px #ff6fa655, 0 0 0 2px #ffffff;
+      transition: transform .08s ease, filter .2s ease;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    .btn:active{transform:translateY(1px)}
+    .footer{padding:20px; text-align:center; font-size:13px; opacity:.7}
+    .surprise{display:none}
+    .surprise.show{display:block; animation: pop .5s ease}
+    @keyframes pop{0%{transform:scale(.96); opacity:.4}100%{transform:scale(1); opacity:1}}
+  </style>
+</head>
+<body>
+  <div class="hearts" aria-hidden="true" id="bgHearts"></div>
+  <main class="wrap">
+    <article class="card">
+      <header class="header">
+        <h1 class="title">Feliz Mesesario, Murcielaguito 💗🍈</h1>
+        <p class="subtitle">Desde <span id="fecha">23 de julio de 2023</span> hasta hoy… y contando.</p>
+        <div class="divider" aria-hidden="true">
+          <svg viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="g" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0%" stop-color="#ff91c1"/>
+                <stop offset="100%" stop-color="#ffbad6"/>
+              </linearGradient>
+            </defs>
+            <path d="M0 60 C 150 20, 300 100, 450 60 S 750 20, 900 60 1050 100, 1200 60" fill="none" stroke="url(#g)" stroke-width="6"/>
+          </svg>
+        </div>
+      </header>
+      <section class="content">
+        <p class="quote">“Amarte es mi rutina favorita, cariño.” 🌹</p>
+        <section class="love">
+          <h3>Para ti, mi flor más bonita 🌸</h3>
+          <p>
+            Hoy celebramos <strong>dos años y 11 meses</strong> de amor, paciencia y aventuras. Gracias por ser mi
+            vida entera, por tu risa que ilumina, por tu abrazo que calma. Prometo elegirte
+            cada día, en cada versión de nosotros. Te amo, hoy y siempre.
+          </p>
+        </section>
+
+        <div style="display:flex; gap:12px; justify-content:center; margin-top:6px">
+          <button class="btn" id="btnSorpresa">Haz clic para una sorpresa 💌</button>
+        </div>
+
+        <section class="surprise" id="surprise">
+          <p style="text-align:center; font-size:18px; margin:18px 0 8px">Siempre tú, mi princesita hermosa. ❤</p>
+          <p style="text-align:center; font-size:14px; opacity:.8">No hay nadie más en el mundo que te ame como yo te amo.</p>
+        </section>
+
+      
+
+      <footer class="footer">
+        Con todo mi amor,<br>
+        <strong>Raul</strong>
+      </footer>
+    </article>
+  </main>
+
+  <script>
+    const bg = document.getElementById('bgHearts');
+    const HEARTS = 26;
+
+    function spawnStaticHearts(){
+      const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+      for(let i=0; i<HEARTS; i++){
+        const s = document.createElement('span');
+        s.style.left = Math.random()*vw + "px";
+        s.style.setProperty('--dur', (8 + Math.random()*10)+'s');
+        s.style.setProperty('--delay', (-Math.random()*8)+'s');
+        s.style.opacity = 0.6 + Math.random()*0.4;
+        s.style.transform = 'rotate(45deg)';
+        bg.appendChild(s);
+      }
+    }
+
+    function burstHearts(x,y){
+      const n = 20 + Math.floor(Math.random()*20);
+      for(let i=0; i<n; i++){
+        const h = document.createElement('span');
+        h.style.left = (x-8)+"px";
+        h.style.top = (y-8)+"px";
+        h.style.bottom = 'auto';
+        const dur = 900 + Math.random()*900;
+        const angle = Math.random()*Math.PI*2;
+        const dist = 60 + Math.random()*140;
+        h.style.transition = `transform ${dur}ms ease-out, opacity ${dur}ms ease-out`;
+        h.style.transform = `translate(0,0) rotate(45deg)`; 
+        bg.appendChild(h);
+        requestAnimationFrame(()=>{
+          h.style.opacity = .2 + Math.random()*0.6;
+          h.style.transform = `translate(${Math.cos(angle)*dist}px, ${Math.sin(angle)*dist}px) rotate(45deg)`;
+        });
+        setTimeout(()=>h.remove(), dur+50);
+      }
+    }
+
+    window.addEventListener('click', (e)=> burstHearts(e.clientX, e.clientY));
+
+    const btn = document.getElementById('btnSorpresa');
+    const surprise = document.getElementById('surprise');
+    btn.addEventListener('click',()=>{
+      surprise.classList.toggle('show');
+      burstHearts(window.innerWidth/2, btn.getBoundingClientRect().top);
+    });
+
+    spawnStaticHearts();
+
+    // Música con Play/Pause
+    const musicBtn = document.getElementById('musicBtn');
+    const musicStatus = document.getElementById('musicStatus');
+    let audio;
+
+    musicBtn.addEventListener('click', () => {
+      if(!audio){
+        audio = new Audio('https://files.catbox.moe/y70lzx.mp3');
+        audio.loop = true;
+      }
+      if(audio.paused){
+        audio.play();
+        musicStatus.textContent = "🎶 Reproduciendo";
+      } else {
+        audio.pause();
+        musicStatus.textContent = "⏸ Pausado";
+      }
+    });
+  </script>
+</body>
+</html>
